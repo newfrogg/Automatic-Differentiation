@@ -106,7 +106,7 @@ With this approach, we can do more than just compute derivatives, but we can com
 Jacobian Matrix:
 
 $$
-J \;=\;
+J \;=\
 \begin{pmatrix}
 \displaystyle \frac{\partial y_1}{\partial x_1} & \cdots & \displaystyle \frac{\partial y_1}{\partial x_n} \\
 \vdots & \ddots & \vdots \\
@@ -123,14 +123,14 @@ What makes this special, specifically in forward mode AD, is that we don't need 
 Jacobian-vector Product:
 
 $$
-J \,.\mathbf{r}
+J\,\cdot\mathbf{r}
 =
 \begin{pmatrix}
-\frac{\partial y_1}{\partial x_1} & \cdots & \frac{\partial y_1}{\partial x_n} \\
+\displaystyle \frac{\partial y_1}{\partial x_1} & \cdots & \displaystyle \frac{\partial y_1}{\partial x_n} \\
 \vdots & \ddots & \vdots \\
-\frac{\partial y_m}{\partial x_1} & \cdots & \frac{\partial y_m}{\partial x_n}
+\displaystyle \frac{\partial y_m}{\partial x_1} & \cdots & \displaystyle \frac{\partial y_m}{\partial x_n}
 \end{pmatrix}
-\cdot
+\;\cdot\;
 \begin{pmatrix}
 r_1\\
 \vdots\\
