@@ -123,19 +123,16 @@ What makes this special, specifically in forward mode AD, is that we don't need 
 Jacobian-vector Product:
 
 $$
-J \cdot \mathbf{r}
-=
-\begin{pmatrix}
-\displaystyle \frac{\partial y_{1}}{\partial x_{1}} & \cdots & \displaystyle \frac{\partial y_{1}}{\partial x_{n}} \\
+J \cdot \mathbf{r} = 
+\begin{bmatrix}
+\frac{\partial y_1}{\partial x_1} & \cdots & \frac{\partial y_1}{\partial x_n} \\
 \vdots & \ddots & \vdots \\
-\displaystyle \frac{\partial y_{m}}{\partial x_{1}} & \cdots & \displaystyle \frac{\partial y_{m}}{\partial x_{n}}
-\end{pmatrix}
+\frac{\partial y_m}{\partial x_1} & \cdots & \frac{\partial y_m}{\partial x_n}
+\end{bmatrix}
 \,
-\begin{pmatrix}
-r_{1}\\
-\vdots\\
-r_{n}
-\end{pmatrix}
+\begin{bmatrix}
+r_1 \\ \vdots \\ r_n
+\end{bmatrix}
 $$
 
 Altogether, this makes forward mode AD practical in certain cases. To be specific, forward mode AD is effective when evaluating a function $f∶R^n→R^m$ when $n≪m$. For example, a function with one input and $m$ outputs requires a single forward pass in this mode to compute its Jacobian. On the opposite end, a function with $n$ inputs and one output ( $f∶R^n→R$ ) requires $n$ forward passes in forward mode to obtain its Jacobian.
