@@ -130,7 +130,7 @@ J \cdot \mathbf{r}
 \vdots & \ddots & \vdots \\
 \displaystyle \frac{\partial y_{m}}{\partial x_{1}} & \cdots & \displaystyle \frac{\partial y_{m}}{\partial x_{n}}
 \end{pmatrix}
-\;
+\,
 \begin{pmatrix}
 r_{1}\\
 \vdots\\
