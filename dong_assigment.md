@@ -86,15 +86,16 @@ Continuing from this definition, we can build out the forward primal and forward
 
 <div align="center">
 
-| **Forward Primal Trace**  | **Output**            | **Forward Tangent Trace**                                             | **Output**                | 
-| --------                  | -------               | -------                                                               | -------                   |
-| $v_{-1}=x_1$              | 3                     | $\dot{v}_{-1} = \dot{x_1}$                                            | 0                         |
-| $v_{0}=x_2$               | -4                    | $\dot{v}_{0} = \dot{x_2}$                                             | 1                         |
-| $v_1=v_{-1} \times v_0$   | 3 x (-4) = -12        | $\dot{v}_{1} = \dot{v}_{-1} \times v_{0} + \dot{v}_{0} \times v_{-1}$ | 0 x (-4) + 1 x (3) = 3    |
-| $v_2=ln⁡(v_{-1})$          | ln(3) = 1.10          | $\dot{v}_{2} = \dot{v}_{1} \times \frac{1}{v_{-1}}$                   | 0 x (1/3) = 0             |
-| $v_3=v_1+v_0$             | -12 + -4 = -16        | $\dot{v}_{3} = \dot{v}_{1} + \dot{v}_{0}$                             | 3 + 1 = 4                 |
-| $v_4=v_2-v_3$             | -16 – 1.10 = 17.10    | $\dot{v}_{4} = \dot{v}_{3} - \dot{v}_{2}$                             | 4 – 0 = 4                 |
-| $y=v_4$                   | -17.10                | $\dot{y} = \dot{v}_{4}$                                               | 4                         |
+| Forward Primal Trace | Output | Forward Tangent Trace                       | Output           |
+|----------------------|--------|---------------------------------------------|------------------|
+| $v_{-1} = x_1$       | 3      | $\dot v_{-1} = \dot x_1$                    | 0                |
+| $v_{0} = x_2$        | –4     | $\dot v_{0} = \dot x_2$                     | 1                |
+| $v_{1} = v_{-1} \times v_{0}$ | $3 \times (-4) = -12$ | $\dot v_{1} = \dot v_{-1}\,v_{0} + \dot v_{0}\,v_{-1}$ | $0\times(-4) + 1\times(3) = 3$ |
+| $v_{2} = \ln(v_{-1})$| $\ln(3)=1.10$ | $\dot v_{2} = \dot v_{-1}\times\frac{1}{v_{-1}}$ | $0\times\frac1{3}=0$ |
+| $v_{3} = v_{1} + v_{0}$ | $-12 + -4 = -16$ | $\dot v_{3} = \dot v_{1} + \dot v_{0}$ | $3 + 1 = 4$ |
+| $v_{4} = v_{2} - v_{3}$ | $-16 - 1.10 = 17.10$ | $\dot v_{4} = \dot v_{2} - \dot v_{3}$ | $0 - 4 = -4$ |
+| $y = v_{4}$ | $-17.10$ | $\dot y = \dot v_{4}$ | $-4$ |
+
 <p style="text-align:center;">Table 2: Forward Mode Trace</p>
 </div>
 
@@ -157,15 +158,15 @@ With intuition behind reverse mode AD, let's take a look at the reverse mode eva
 
 <div align="center">
 
-| **Forward Primal Trace**  | **Output**            | **Forward Tangent Trace**                                                                                 | **Output**                    | 
-| --------                  | -------               | -------                                                                                                   | -------                       |
-| $v_{-1}=x_1$              | 3                     | $\bar{v}_{-1} = \bar{x_1} = \bar{v}_{2} \times \frac{1}{v_{-1}} + \bar{v}_{1} \times v_{0}$               | -1 x (1/3) + 1 x (-4) = -4.33 |
-| $v_{0}=x_2$               | -4                    | $\bar{v}_{0} = \bar{x_2} = \bar{v}_{3} \times 1 + \bar{v}_{1} \times v_{-1}$                              | 1 x 1 + 1 x 3 = 4             |
-| $v_1=v_{-1} \times v_0$   | 3 x (-4) = -12        | $\bar{v}_{1} = \bar{v}_{3} \times 1$                                                                      | 1 x 1 = 1                     |
-| $v_2=ln⁡(v_{-1})$          | ln(3) = 1.10          | $\bar{v}_{2} = \bar{v}_{4} \times -1$                                                                     | 1 x -1 = -1                   |
-| $v_3=v_1+v_0$             | -12 + -4 = -16        | $\bar{v}_{3} = \bar{v}_{4} \times 1$                                                                      | 1 x 1 = 1                     |
-| $v_4=v_2-v_3$             | -16 – 1.10 = 17.10    | $\bar{v}_{4} = \bar{y}$                                                                                   | 1                             |
-| $y=v_4$                   | -17.10                | $\bar{y}$                                                                                                 | 1                             |
+| Forward Primal Trace          | Output           | Reverse Adjoint Trace                                                   | Output                |
+|-------------------------------|------------------|---------------------------------------------------------------------------|-----------------------|
+| $v_{-1} = x_{1}$              | $3$              | $\bar v_{-1} = \bar x_{1} = \bar v_{2}\times\frac{1}{v_{-1}} + \bar v_{1}\times v_{0}$ | $-1 \times (1/3) + 1 \times (-4) = -4.33$ |
+| $v_{0} = x_{2}$               | $-4$             | $\bar v_{0} = \bar x_{2} = \bar v_{3}\times 1 + \bar v_{1}\times v_{-1}$         | $1 \times 1 + 1 \times 3 = 4$            |
+| $v_{1} = v_{-1} \times v_{0}$ | $3 \times (-4) = -12$ | $\bar v_{1} = \bar v_{3}\times 1$                                         | $1 \times 1 = 1$                       |
+| $v_{2} = \ln(v_{-1})$         | $\ln(3) = 1.10$  | $\bar v_{2} = \bar v_{4}\times -1$                                        | $1 \times -1 = -1$                     |
+| $v_{3} = v_{1} + v_{0}$       | $-12 + -4 = -16$ | $\bar v_{3} = \bar v_{1} + \bar v_{4}\times 1$                              | $1 \times 1 = 1$                       |
+| $v_{4} = v_{2} - v_{3}$       | $-16 - 1.10 = 17.10$ | $\bar v_{4} = \bar y$                                                     | $1$                                    |
+| $y = v_{4}$                   | $-17.10$         | $\bar y = \bar v_{4}$                                                       | $1$                                    |                                                                                          | 1                             |
 <p style="text-align:center;">Table 3: Reverse Mode Trace</p>
 </div>
 
