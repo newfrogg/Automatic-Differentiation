@@ -123,7 +123,7 @@ What makes this special, specifically in forward mode AD, is that we don't need 
 Jacobian-vector Product:
 
 $$
-J \cdot \mathbf{r}
+J \;\cdot\; \mathbf{r}
 =
 \begin{bmatrix}
 \frac{\partial y_1}{\partial x_1} & \cdots & \frac{\partial y_1}{\partial x_n} \\
