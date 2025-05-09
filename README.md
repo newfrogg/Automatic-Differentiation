@@ -19,16 +19,22 @@
 **This task assignment is done by Gia Hinh.**
 
 ### Reference
-- Automatic Differentiation from D2l - https://d2l.ai/chapter_preliminaries/autograd.html
+- Automatic Differentiation from D2l
+https://d2l.ai/chapter_preliminaries/autograd.html
 
-- Automatic Differentiation in Machine Learning: a Survey - https://arxiv.org/pdf/1502.05767
+- Automatic Differentiation in Machine Learning: a Survey
+https://arxiv.org/pdf/1502.05767
 
-- Automatic differentiation, Wikipedia - https://en.wikipedia.org/wiki/Automatic_differentiation
+- Automatic differentiation, Wikipedia
+https://en.wikipedia.org/wiki/Automatic_differentiation
 
-- What is Automatic Differentiation?, Youtube - https://youtu.be/wG_nF1awSSY?si=Nr_S8hEgc2yDOFGP
+- What is Automatic Differentiation?, Youtube
+https://youtu.be/wG_nF1awSSY?si=Nr_S8hEgc2yDOFGP
 
-- Introduction to Autodifferentiation in Machine Learning - https://www.asadraza.net/posts/autodiff/autodiff/
+- Introduction to Autodifferentiation in Machine Learning
+https://www.asadraza.net/posts/autodiff/autodiff/
 
-- Computing Gradients with Backpropagation - https://www.cs.princeton.edu/courses/archive/fall18/cos324/files/backprop.pdf
+- Computing Gradients with Backpropagation
+https://www.cs.princeton.edu/courses/archive/fall18/cos324/files/backprop.pdf
 
 
