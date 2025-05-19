@@ -1,3 +1,6 @@
+ ### Presentation video: 
+ [Link presentation video](https://drive.google.com/drive/folders/1V835rQMn2cQ_oBmjzzrdAA7KdBAghcrx?usp=sharing)
+
 ### Tasks assignment
 
 | #task | Section             | Subsection                                                     | Person in Charge |
@@ -37,6 +40,6 @@ https://www.asadraza.net/posts/autodiff/autodiff/
 - Computing Gradients with Backpropagation
 https://www.cs.princeton.edu/courses/archive/fall18/cos324/files/backprop.pdf
 
- ### Presentation video: https://drive.google.com/drive/folders/1V835rQMn2cQ_oBmjzzrdAA7KdBAghcrx?usp=sharing
+
 
 
